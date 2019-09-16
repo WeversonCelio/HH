@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PagamentoEditDlg" widgetVar="PagamentoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditPagamentoTitle}">
+            <h:form id="PagamentoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{pagamentoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditPagamentoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{pagamentoController.selected.id}" title="#{bundle.EditPagamentoTitle_id}" required="true" requiredMessage="#{bundle.EditPagamentoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditPagamentoLabel_tipo}" for="tipo" />
+                        <p:inputText id="tipo" value="#{pagamentoController.selected.tipo}" title="#{bundle.EditPagamentoTitle_tipo}" />
+                        <p:outputLabel value="#{bundle.EditPagamentoLabel_valor}" for="valor" />
+                        <p:inputText id="valor" value="#{pagamentoController.selected.valor}" title="#{bundle.EditPagamentoTitle_valor}" />
+                        <p:outputLabel value="#{bundle.EditPagamentoLabel_dataPagameneto}" for="dataPagameneto" />
+                        <p:calendar id="dataPagameneto" pattern="MM/dd/yyyy HH:mm:ss" value="#{pagamentoController.selected.dataPagameneto}" title="#{bundle.EditPagamentoTitle_dataPagameneto}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{pagamentoController.update}" value="#{bundle.Save}" update="display,:PagamentoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'PagamentoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PagamentoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

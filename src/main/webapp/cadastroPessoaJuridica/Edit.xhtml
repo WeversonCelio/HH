@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroPessoaJuridicaEditDlg" widgetVar="CadastroPessoaJuridicaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCadastroPessoaJuridicaTitle}">
+            <h:form id="CadastroPessoaJuridicaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroPessoaJuridicaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{cadastroPessoaJuridicaController.selected.id}" title="#{bundle.EditCadastroPessoaJuridicaTitle_id}" required="true" requiredMessage="#{bundle.EditCadastroPessoaJuridicaRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_nomeFantasia}" for="nomeFantasia" />
+                        <p:inputText id="nomeFantasia" value="#{cadastroPessoaJuridicaController.selected.nomeFantasia}" title="#{bundle.EditCadastroPessoaJuridicaTitle_nomeFantasia}" />
+                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_cnpj}" for="cnpj" />
+                        <p:inputText id="cnpj" value="#{cadastroPessoaJuridicaController.selected.cnpj}" title="#{bundle.EditCadastroPessoaJuridicaTitle_cnpj}" />
+                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_contato}" for="contato" />
+                        <p:inputText id="contato" value="#{cadastroPessoaJuridicaController.selected.contato}" title="#{bundle.EditCadastroPessoaJuridicaTitle_contato}" />
+                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{cadastroPessoaJuridicaController.selected.email}" title="#{bundle.EditCadastroPessoaJuridicaTitle_email}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cadastroPessoaJuridicaController.update}" value="#{bundle.Save}" update="display,:CadastroPessoaJuridicaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CadastroPessoaJuridicaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CadastroPessoaJuridicaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroPessoaFisicaViewDlg" widgetVar="CadastroPessoaFisicaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCadastroPessoaFisicaTitle}">
+            <h:form id="CadastroPessoaFisicaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroPessoaFisicaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCadastroPessoaFisicaLabel_id}"/>
+                        <h:outputText value="#{cadastroPessoaFisicaController.selected.id}" title="#{bundle.ViewCadastroPessoaFisicaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewCadastroPessoaFisicaLabel_nome}"/>
+                        <h:outputText value="#{cadastroPessoaFisicaController.selected.nome}" title="#{bundle.ViewCadastroPessoaFisicaTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewCadastroPessoaFisicaLabel_cpf}"/>
+                        <h:outputText value="#{cadastroPessoaFisicaController.selected.cpf}" title="#{bundle.ViewCadastroPessoaFisicaTitle_cpf}"/>
+                        <h:outputText value="#{bundle.ViewCadastroPessoaFisicaLabel_contato}"/>
+                        <h:outputText value="#{cadastroPessoaFisicaController.selected.contato}" title="#{bundle.ViewCadastroPessoaFisicaTitle_contato}"/>
+                        <h:outputText value="#{bundle.ViewCadastroPessoaFisicaLabel_email}"/>
+                        <h:outputText value="#{cadastroPessoaFisicaController.selected.email}" title="#{bundle.ViewCadastroPessoaFisicaTitle_email}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CadastroPessoaFisicaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

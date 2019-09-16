@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HospedagemViewDlg" widgetVar="HospedagemViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewHospedagemTitle}">
+            <h:form id="HospedagemViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{hospedagemController.selected != null}">
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_id}"/>
+                        <h:outputText value="#{hospedagemController.selected.id}" title="#{bundle.ViewHospedagemTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_diaria}"/>
+                        <h:outputText value="#{hospedagemController.selected.diaria}" title="#{bundle.ViewHospedagemTitle_diaria}"/>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_dataHospedagem}"/>
+                        <h:outputText value="#{hospedagemController.selected.dataHospedagem}" title="#{bundle.ViewHospedagemTitle_dataHospedagem}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_dataSaida}"/>
+                        <h:outputText value="#{hospedagemController.selected.dataSaida}" title="#{bundle.ViewHospedagemTitle_dataSaida}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_totalHospedagem}"/>
+                        <h:outputText value="#{hospedagemController.selected.totalHospedagem}" title="#{bundle.ViewHospedagemTitle_totalHospedagem}"/>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_cadastrosPessoaFisicaId}"/>
+                        <h:outputText value="#{hospedagemController.selected.cadastrosPessoaFisicaId}" title="#{bundle.ViewHospedagemTitle_cadastrosPessoaFisicaId}"/>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_cadastrosPessoaJuridicaId}"/>
+                        <h:outputText value="#{hospedagemController.selected.cadastrosPessoaJuridicaId}" title="#{bundle.ViewHospedagemTitle_cadastrosPessoaJuridicaId}"/>
+                        <h:outputText value="#{bundle.ViewHospedagemLabel_cadastrosQuartoId}"/>
+                        <h:outputText value="#{hospedagemController.selected.cadastrosQuartoId}" title="#{bundle.ViewHospedagemTitle_cadastrosQuartoId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="HospedagemViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

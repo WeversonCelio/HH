@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HospedagemCreateDlg" widgetVar="HospedagemCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateHospedagemTitle}">
+            <h:form id="HospedagemCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{hospedagemController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{hospedagemController.selected.id}" title="#{bundle.CreateHospedagemTitle_id}" required="true" requiredMessage="#{bundle.CreateHospedagemRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_diaria}" for="diaria" />
+                        <p:inputText id="diaria" value="#{hospedagemController.selected.diaria}" title="#{bundle.CreateHospedagemTitle_diaria}" />
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_dataHospedagem}" for="dataHospedagem" />
+                        <p:calendar id="dataHospedagem" pattern="MM/dd/yyyy HH:mm:ss" value="#{hospedagemController.selected.dataHospedagem}" title="#{bundle.EditHospedagemTitle_dataHospedagem}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_dataSaida}" for="dataSaida" />
+                        <p:calendar id="dataSaida" pattern="MM/dd/yyyy HH:mm:ss" value="#{hospedagemController.selected.dataSaida}" title="#{bundle.EditHospedagemTitle_dataSaida}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_totalHospedagem}" for="totalHospedagem" />
+                        <p:inputText id="totalHospedagem" value="#{hospedagemController.selected.totalHospedagem}" title="#{bundle.CreateHospedagemTitle_totalHospedagem}" />
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_cadastrosPessoaFisicaId}" for="cadastrosPessoaFisicaId" />
+                        <p:selectOneMenu id="cadastrosPessoaFisicaId" value="#{hospedagemController.selected.cadastrosPessoaFisicaId}" >
+                            <f:selectItems value="#{cadastroPessoaFisicaController.itemsAvailableSelectOne}"
+                                           var="cadastrosPessoaFisicaIdItem"
+                                           itemValue="#{cadastrosPessoaFisicaIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_cadastrosPessoaJuridicaId}" for="cadastrosPessoaJuridicaId" />
+                        <p:selectOneMenu id="cadastrosPessoaJuridicaId" value="#{hospedagemController.selected.cadastrosPessoaJuridicaId}" >
+                            <f:selectItems value="#{cadastroPessoaJuridicaController.itemsAvailableSelectOne}"
+                                           var="cadastrosPessoaJuridicaIdItem"
+                                           itemValue="#{cadastrosPessoaJuridicaIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_cadastrosQuartoId}" for="cadastrosQuartoId" />
+                        <p:selectOneMenu id="cadastrosQuartoId" value="#{hospedagemController.selected.cadastrosQuartoId}" >
+                            <f:selectItems value="#{cadastroQuartoController.itemsAvailableSelectOne}"
+                                           var="cadastrosQuartoIdItem"
+                                           itemValue="#{cadastrosQuartoIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{hospedagemController.create}" value="#{bundle.Save}" update="display,:HospedagemListForm:datalist,:growl" oncomplete="handleSubmit(args,'HospedagemCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="HospedagemCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
