@@ -12,8 +12,6 @@
             <h:form id="HospedagemCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{hospedagemController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateHospedagemLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{hospedagemController.selected.id}" title="#{bundle.CreateHospedagemTitle_id}" required="true" requiredMessage="#{bundle.CreateHospedagemRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateHospedagemLabel_diaria}" for="diaria" />
                         <p:inputText id="diaria" value="#{hospedagemController.selected.diaria}" title="#{bundle.CreateHospedagemTitle_diaria}" />
                         <p:outputLabel value="#{bundle.CreateHospedagemLabel_dataHospedagem}" for="dataHospedagem" />
