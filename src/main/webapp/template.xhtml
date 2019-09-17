@@ -15,31 +15,27 @@
 
         <p:growl id="growl" life="3000" />
 
-        <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+      
+          
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="CadastroPessoaFisica" outcome="/cadastroPessoaFisica/List.xhtml" />
-                            <p:menuitem value="CadastroPessoaJuridica" outcome="/cadastroPessoaJuridica/List.xhtml" />
-                            <p:menuitem value="CadastroQuarto" outcome="/cadastroQuarto/List.xhtml" />
-                            <p:menuitem value="Hospedagem" outcome="/hospedagem/List.xhtml" />
-                            <p:menuitem value="Pagamento" outcome="/pagamento/List.xhtml" />
-                        </p:submenu>
+                       
+                            <p:menuitem value="CadastroPessoaFisica" outcome="/cadastroPessoaFisica/List.xhtml"  icon="ui-icon-plusthick"  />
+                            <p:menuitem value="CadastroPessoaJuridica" outcome="/cadastroPessoaJuridica/List.xhtml"  icon="ui-icon-plusthick"  />
+                            <p:menuitem value="CadastroQuarto" outcome="/cadastroQuarto/List.xhtml" icon="ui-icon-lightbulb" />
+                            <p:menuitem value="Hospedagem" outcome="/hospedagem/List.xhtml" icon="ui-icon-star"/>
+                            <p:menuitem value="Pagamento" outcome="/pagamento/List.xhtml" icon=" ui-icon-cart" />
+                      
                     </p:menubar>
                 </h:form>
-            </p:layoutUnit>
+        
 
-            <p:layoutUnit position="south" size="60">
-                <ui:insert name="footer"/>
-            </p:layoutUnit>
-
-            <p:layoutUnit position="center">
+          
                 <ui:insert name="body"/>
-            </p:layoutUnit>
+       
 
-        </p:layout>
+  
 
     </h:body>
 
