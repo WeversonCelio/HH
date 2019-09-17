@@ -12,8 +12,6 @@
             <h:form id="CadastroPessoaJuridicaEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{cadastroPessoaJuridicaController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{cadastroPessoaJuridicaController.selected.id}" title="#{bundle.EditCadastroPessoaJuridicaTitle_id}" required="true" requiredMessage="#{bundle.EditCadastroPessoaJuridicaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_nomeFantasia}" for="nomeFantasia" />
                         <p:inputText id="nomeFantasia" value="#{cadastroPessoaJuridicaController.selected.nomeFantasia}" title="#{bundle.EditCadastroPessoaJuridicaTitle_nomeFantasia}" />
                         <p:outputLabel value="#{bundle.EditCadastroPessoaJuridicaLabel_cnpj}" for="cnpj" />
