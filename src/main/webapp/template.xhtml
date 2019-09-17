@@ -13,30 +13,28 @@
 
     <h:body>
 
-        
+
         <p:growl id="growl" life="3000" />
 
-      
-          
-                <h:form id="menuForm">
-                    <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                       
-                            <p:menuitem value="CadastroPessoaFisica" outcome="/cadastroPessoaFisica/List.xhtml"  icon="ui-icon-plusthick"  />
-                            <p:menuitem value="CadastroPessoaJuridica" outcome="/cadastroPessoaJuridica/List.xhtml"  icon="ui-icon-plusthick"  />
-                            <p:menuitem value="CadastroQuarto" outcome="/cadastroQuarto/List.xhtml" icon="ui-icon-lightbulb" />
-                            <p:menuitem value="Hospedagem" outcome="/hospedagem/List.xhtml" icon="ui-icon-star"/>
-                            <p:menuitem value="Pagamento" outcome="/pagamento/List.xhtml" icon=" ui-icon-cart" />
-                      
-                    </p:menubar>
-                </h:form>
-        
 
-          
-                <ui:insert name="body"/>
-       
 
-  
+        <h:form id="menuForm">
+            <p:menubar>
+                <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
+                <p:menuitem value="CadastroPessoaFisica" outcome="/cadastroPessoaFisica/List.xhtml"  icon="ui-icon-plusthick"  />
+                <p:menuitem value="CadastroPessoaJuridica" outcome="/cadastroPessoaJuridica/List.xhtml"  icon="ui-icon-plusthick"  />
+                <p:menuitem value="CadastroQuarto" outcome="/cadastroQuarto/List.xhtml" icon="ui-icon-lightbulb" />
+                <p:menuitem value="Hospedagem" outcome="/hospedagem/List.xhtml" icon="ui-icon-star"/>
+                <p:menuitem value="Pagamento" outcome="/pagamento/List.xhtml" icon=" ui-icon-cart" />
+            </p:menubar>
+        </h:form>
+
+
+
+        <ui:insert name="body"/>
+
+
+
 
     </h:body>
 
