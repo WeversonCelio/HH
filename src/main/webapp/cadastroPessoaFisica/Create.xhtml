@@ -12,8 +12,6 @@
             <h:form id="CadastroPessoaFisicaCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{cadastroPessoaFisicaController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateCadastroPessoaFisicaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{cadastroPessoaFisicaController.selected.id}" title="#{bundle.CreateCadastroPessoaFisicaTitle_id}" required="true" requiredMessage="#{bundle.CreateCadastroPessoaFisicaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateCadastroPessoaFisicaLabel_nome}" for="nome" />
                         <p:inputText id="nome" value="#{cadastroPessoaFisicaController.selected.nome}" title="#{bundle.CreateCadastroPessoaFisicaTitle_nome}" />
                         <p:outputLabel value="#{bundle.CreateCadastroPessoaFisicaLabel_cpf}" for="cpf" />
