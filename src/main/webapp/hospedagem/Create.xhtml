@@ -22,12 +22,14 @@
                         <p:inputText id="totalHospedagem" value="#{hospedagemController.selected.totalHospedagem}" title="#{bundle.CreateHospedagemTitle_totalHospedagem}" />
                         <p:outputLabel value="#{bundle.CreateHospedagemLabel_cadastrosPessoaFisicaId}" for="cadastrosPessoaFisicaId" />
                         <p:selectOneMenu id="cadastrosPessoaFisicaId" value="#{hospedagemController.selected.cadastrosPessoaFisicaId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{cadastroPessoaFisicaController.itemsAvailableSelectOne}"
                                            var="cadastrosPessoaFisicaIdItem"
                                            itemValue="#{cadastrosPessoaFisicaIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateHospedagemLabel_cadastrosPessoaJuridicaId}" for="cadastrosPessoaJuridicaId" />
                         <p:selectOneMenu id="cadastrosPessoaJuridicaId" value="#{hospedagemController.selected.cadastrosPessoaJuridicaId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{cadastroPessoaJuridicaController.itemsAvailableSelectOne}"
                                            var="cadastrosPessoaJuridicaIdItem"
                                            itemValue="#{cadastrosPessoaJuridicaIdItem}"/>

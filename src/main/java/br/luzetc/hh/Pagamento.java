@@ -127,7 +127,7 @@ public class Pagamento implements Serializable {
 
     @Override
     public String toString() {
-        return "br.luzetc.hh.Pagamento[ id=" + id + " ]";
+        return "[" + id + "] " + valor;
     }
     
 }

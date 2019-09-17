@@ -112,7 +112,7 @@ public class CadastroQuarto implements Serializable {
 
     @Override
     public String toString() {
-        return "br.luzetc.hh.CadastroQuarto[ id=" + id + " ]";
+        return "Quarto [" + id + "] " + quarto;
     }
     
 }

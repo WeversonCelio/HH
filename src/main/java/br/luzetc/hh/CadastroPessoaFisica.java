@@ -136,7 +136,7 @@ public class CadastroPessoaFisica implements Serializable {
 
     @Override
     public String toString() {
-        return "br.luzetc.hh.CadastroPessoaFisica[ id=" + id + " ]";
+        return "[" + id + "] "+ nome;
     }
     
 }

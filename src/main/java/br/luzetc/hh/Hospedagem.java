@@ -176,7 +176,7 @@ public class Hospedagem implements Serializable {
 
     @Override
     public String toString() {
-        return "br.luzetc.hh.Hospedagem[ id=" + id + " ]";
+        return "[" + id + "] " + dataHospedagem;
     }
     
 }
