@@ -12,8 +12,15 @@
             <h:form id="PagamentoEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{pagamentoController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditPagamentoLabel_tipo}" for="tipo" />
-                        <p:inputText id="tipo" value="#{pagamentoController.selected.tipo}" title="#{bundle.EditPagamentoTitle_tipo}" />
+
+                         <p:outputLabel value="#{bundle.CreatePagamentoLabel_tipo}" for="tipo" />
+                        <p:selectOneMenu id="tipo" value="#{pagamentoController.selected.tipo}"
+                                converter="tipoPagamentoConverter" required="true">
+                            <f:selectItems value="#{pagamentoController.listarPagamentos()}"/>
+                        </p:selectOneMenu>
+  
+
+
                         <p:outputLabel value="#{bundle.EditPagamentoLabel_valor}" for="valor" />
                         <p:inputText id="valor" value="#{pagamentoController.selected.valor}" title="#{bundle.EditPagamentoTitle_valor}" />
                         <p:outputLabel value="#{bundle.EditPagamentoLabel_dataPagameneto}" for="dataPagameneto" />

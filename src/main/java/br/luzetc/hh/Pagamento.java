@@ -48,8 +48,8 @@ public class Pagamento implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Size(max = 255)
     
+        
   @Enumerated(EnumType.STRING)
     @Column(name = "tipo")
     private TipoPagamento tipo;

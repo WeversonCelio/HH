@@ -1,5 +1,6 @@
 package br.luzetc.hh;
 
+import br.luzetc.hh.enumeration.TipoPagamento;
 import br.luzetc.hh.util.JsfUtil;
 import br.luzetc.hh.util.JsfUtil.PersistAction;
 
@@ -25,6 +26,10 @@ public class PagamentoController implements Serializable {
     private br.luzetc.hh.PagamentoFacade ejbFacade;
     private List<Pagamento> items = null;
     private Pagamento selected;
+    
+     public TipoPagamento[] listarPagamentos(){
+       return TipoPagamento.values();
+    }
 
     public PagamentoController() {
     }

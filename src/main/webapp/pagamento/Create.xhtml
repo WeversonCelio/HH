@@ -12,12 +12,20 @@
             <h:form id="PagamentoCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{pagamentoController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreatePagamentoLabel_tipo}" for="tipo" />
-                        <p:inputText id="tipo" value="#{pagamentoController.selected.tipo}" title="#{bundle.CreatePagamentoTitle_tipo}" />
+                                             
+                          <p:outputLabel value="#{bundle.CreatePagamentoLabel_tipo}" for="tipo" />
+                        <p:selectOneMenu id="tipo" value="#{pagamentoController.selected.tipo}"
+                                converter="tipoPagamentoConverter" required="true">
+                            <f:selectItems value="#{pagamentoController.listarPagamentos()}"/>
+                        </p:selectOneMenu>
+  
+                        
                         <p:outputLabel value="#{bundle.CreatePagamentoLabel_valor}" for="valor" />
                         <p:inputText id="valor" value="#{pagamentoController.selected.valor}" title="#{bundle.CreatePagamentoTitle_valor}" />
                         <p:outputLabel value="#{bundle.CreatePagamentoLabel_dataPagameneto}" for="dataPagameneto" />
                         <p:calendar id="dataPagameneto" pattern="MM/dd/yyyy HH:mm:ss" value="#{pagamentoController.selected.dataPagameneto}" title="#{bundle.EditPagamentoTitle_dataPagameneto}"  showOn="button"/>
+                  
+                    
                     </p:panelGrid>
                     <p:commandButton actionListener="#{pagamentoController.create}" value="#{bundle.Save}" update="display,:PagamentoListForm:datalist,:growl" oncomplete="handleSubmit(args,'PagamentoCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="PagamentoCreateDialog.hide()"/>
