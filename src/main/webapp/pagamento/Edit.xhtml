@@ -12,8 +12,6 @@
             <h:form id="PagamentoEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{pagamentoController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditPagamentoLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{pagamentoController.selected.id}" title="#{bundle.EditPagamentoTitle_id}" required="true" requiredMessage="#{bundle.EditPagamentoRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditPagamentoLabel_tipo}" for="tipo" />
                         <p:inputText id="tipo" value="#{pagamentoController.selected.tipo}" title="#{bundle.EditPagamentoTitle_tipo}" />
                         <p:outputLabel value="#{bundle.EditPagamentoLabel_valor}" for="valor" />

@@ -5,11 +5,14 @@
  */
 package br.luzetc.hh;
 
+import br.luzetc.hh.enumeration.TipoQuarto;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +20,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -41,9 +43,11 @@ public class CadastroQuarto implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Size(max = 255)
+   
+    @Enumerated(EnumType.STRING)
     @Column(name = "quarto")
-    private String quarto;
+    private TipoQuarto quarto;
+
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "preco")
     private Float preco;
@@ -65,13 +69,15 @@ public class CadastroQuarto implements Serializable {
         this.id = id;
     }
 
-    public String getQuarto() {
+    public TipoQuarto getQuarto() {
         return quarto;
     }
 
-    public void setQuarto(String quarto) {
+    public void setQuarto(TipoQuarto quarto) {
         this.quarto = quarto;
     }
+
+ 
 
     public Float getPreco() {
         return preco;

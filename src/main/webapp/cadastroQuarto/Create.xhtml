@@ -13,7 +13,11 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{cadastroQuartoController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateCadastroQuartoLabel_quarto}" for="quarto" />
-                        <p:inputText id="quarto" value="#{cadastroQuartoController.selected.quarto}" title="#{bundle.CreateCadastroQuartoTitle_quarto}" />
+                        <p:selectOneListbox id="quarto" value="#{cadastroQuartoController.selected.quarto}"
+                                converter="tipoQuartoConverter" required="true">
+                             <f:selectItems value="#{cadastroQuartoController.listarTiposQuarto()}"/>
+                        </p:selectOneListbox>
+                        
                         <p:outputLabel value="#{bundle.CreateCadastroQuartoLabel_preco}" for="preco" />
                         <p:inputText id="preco" value="#{cadastroQuartoController.selected.preco}" title="#{bundle.CreateCadastroQuartoTitle_preco}" />
                     </p:panelGrid>

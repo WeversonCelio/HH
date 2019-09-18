@@ -1,5 +1,6 @@
 package br.luzetc.hh;
 
+import br.luzetc.hh.enumeration.TipoQuarto;
 import br.luzetc.hh.util.JsfUtil;
 import br.luzetc.hh.util.JsfUtil.PersistAction;
 
@@ -26,6 +27,10 @@ public class CadastroQuartoController implements Serializable {
     private List<CadastroQuarto> items = null;
     private CadastroQuarto selected;
 
+    public TipoQuarto[] listarTiposQuarto(){
+       return TipoQuarto.values();
+    }
+  
     public CadastroQuartoController() {
     }
 

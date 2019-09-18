@@ -5,12 +5,15 @@
  */
 package br.luzetc.hh;
 
+import br.luzetc.hh.enumeration.TipoPagamento;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -46,8 +49,10 @@ public class Pagamento implements Serializable {
     @Column(name = "id")
     private Long id;
     @Size(max = 255)
+    
+  @Enumerated(EnumType.STRING)
     @Column(name = "tipo")
-    private String tipo;
+    private TipoPagamento tipo;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "valor")
     private Float valor;
@@ -72,11 +77,11 @@ public class Pagamento implements Serializable {
         this.id = id;
     }
 
-    public String getTipo() {
+    public TipoPagamento getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoPagamento tipo) {
         this.tipo = tipo;
     }
 
